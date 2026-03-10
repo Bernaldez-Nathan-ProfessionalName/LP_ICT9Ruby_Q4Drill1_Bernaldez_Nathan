@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Drill 1</title>
+
+    <style>
+body{
+
+background-color: aqua;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-align: center;
+margin-top: 80px; 
+
+}
+
+.container{
+background-color: darkgray;
+padding: 20px;
+width: 300px;
+margin: auto;
+border: 1px solid black
+
+}
+
+button{
+padding: 8px 15px;
+
+}
+
+input{
+padding: 6px;
+width: 80%;
+margin-bottom: 10px;
+
+}
+
+output{
+margin-top: 15px;
+text-align: center;
+
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container" style="text-align:center;">
+<h1> Electricity Consumption Classification</h1>
+<input type="number" id="kWh" placeholder="Enter usage amount">
+<br>
+<br>
+
+<button onclick="evaluateScore()">EVALUATE</button>
+</div>
+
+<div class="output">
+    <p id="status"></p>
+    <p id="description"></p>
+
+</div>
+
+<script>
+function evaluateScore(){
+var kWh = document.getElementById("kWh").value;
+if (kWh ===""){ 
+    alert("you dont use electricity eh?");
+    return;
+}
+
+kWh = Number(kWh);
+var status = "";
+if (kWh > 500 ){
+status = "Status: Very High Consumption"}
+else if (kWh >= 301){
+status = "Status: High Consumption"}
+else if (kWh >= 201){
+status = "Status: Average Consumption"}
+else if (kWh >= 101){
+status = "Status: Low Consumption"}
+else if (kWh >= 1){
+status = "Status: Lifeline Consumer"}
+
+switch(description){
+    case "Very High Consumption":
+    remark ="Very High Consumption: Heavy Rate";
+    break;
+    case "High Consumption":
+    remark ="High Consumption: Normal Rate";
+    break;
+    case "Average Consumption":
+    remark ="Average Consumption: Typical Rate";
+    break;
+    case "Low Consumption":
+    remark ="Low Consumption: Normal Residential Rate";
+    break;
+    case "Lifeline Consumer":
+    remark ="Lifeline Consumer: Discounted Rate";
+    break;
+
+}
+
+document.getElementById("status").innerHTML = "Status: " + status;
+document.getElementById("description").innerHTML = "Description: " + remark;
+
+}
+
+</script>
+
+
+
+    
+</body>
+</html>
